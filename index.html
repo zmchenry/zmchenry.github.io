@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>In To Eat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <img class="navbar-brand" src="https://pbs.twimg.com/profile_images/445716157710872576/9jFqXdrQ.png">
+            <button class="navbar-toggle" data-toggle="collapse" data-target =".navHeaderCollapse">
+                <span class="glyphicon glyphicon-align-justify glyphicon-white"></span>
+            </button>
+            <div class="collapse navbar-collapse navHeaderCollapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle center" data-toggle="dropdown"><span class="badge center">4</span></a>
+                        <!-- JQUERY THIS DATA -->
+                        <ul class="dropdown-menu">
+                            <li><a href="#">New Orders</a></li>
+                            <li><a href="#">Inventory Updated</a></li>
+                            <li><a href="#">Increased Inventory Need</a></li>
+                            <li><a href="#">Waste Decreased</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button type="button" class="btn glyphicon-button navbar-btn center">
+                            <span class="glyphicon glyphicon-cog glyphicon-white center"></span>
+                        </button>
+                    </li>
+                    <li><a href="#" class="center help-link">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-warning alert-dissmissable">
+                    <button type="button" class="close" data-dismiss="alert" 
+                    aria-hidden="true">
+                    &times;
+                </button>
+                Defective items were 25% or above last order! Consider talking with your supplier.</div>
+            </div>
+        </div>
+        <div class="row snapshot">
+            <div class="col-md-4">
+                <div class="widget doughnut">
+                    <h3>Inventory Usage</h3>
+                    <div class="canvas-container">
+                        <canvas id="usedWastedChart"></canvas>
+                        <span class="status"></span>
+                    </div>
+                    <div class="chart-legend">
+                        <ul>
+                            <li class="used">Used</li>
+                            <li class="wasted">Wasted</li>
+                            <li class="defective">Defective</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 shadow">
+                <table class="table table-striped table-hover num-centered">
+                    <caption>Order Snapshot</caption>
+                    <tr>
+                        <th>    </th>
+                        <th>Product</th>
+                        <th>Average Used</th>
+                        <th>Average Wasted</th>
+                        <th>Order Next Time</th>
+                    </tr>
+                    <!-- Generated through JQuery and AJAX -->
+                    <tr>
+                        <td><img src="http://www.puritanbakery.com/_img/products/bun-4in-wheat.png"></td>
+                        <td>Hamburger Buns</td>
+                        <td>847</td>
+                        <td>100</td>
+                        <td>1300</td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://lghttp.5588.nexcesscdn.net/803DC0/magento/media/catalog/product/cache/7/image/9df78eab33525d08d6e5fb8d27136e95/w/h/white-onions.png"></td>
+                        <td>Onions</td>
+                        <td>44</td>
+                        <td>21</td>
+                        <td>185</td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.examiner.com/images/blog/wysiwyg/image/tomato(1).png"></td>
+                        <td>Tomatoes</td>
+                        <td>18</td>
+                        <td>4</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://static.tumblr.com/33fc65a2406da0c4b9e0a1a61655fa98/be3t1wg/C8Qn1uirh/tumblr_static_butter_lettuce.png"></td>
+                        <td>Lettuce</td>
+                        <td>53</td>
+                        <td>22</td>
+                        <td>125</td>
+                    </tr>
+                    <tr>
+                        <td><img src="http://www.shady-maple.com/files/shady-maple/3513/1862/5005/Ground-Beef-Hamburger-Patties.png"></td>
+                        <td>1/4 Ground Beef</td>
+                        <td>889</td>
+                        <td>91</td>
+                        <td>1380</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row money-displays">
+            <div class="col-md-3 detail total-order-cost">
+                <i class="fa fa-usd fa-dollar"></i>
+                <div class="count"><div>$2,127.60</div></div>
+                <div class="title">Last Order:</div>
+                <div class="title">Total Cost</div>
+            </div>
+            <div class="col-md-3 detail last-inventory-waste">
+                <i class="fa fa-usd fa-dollar"></i>
+                <div class="count">$386.58</div>
+                <div class="title">Last Order:</div>
+                <div class="title">Waste and</div>
+                <div class="title">Defective Cost</div>
+            </div>
+            <div class="col-md-3 detail total-order-cost">
+                <i class="fa fa-usd fa-dollar"></i>
+                <div class="count"><div>$1,848.40</div></div>
+                <div class="title">Next Order:</div>
+                <div class="title">Total Cost</div>
+            </div>
+            <div class="col-md-3 detail next-inventory-waste">
+                <i class="fa fa-usd fa-dollar"></i>
+                <div class="count">$240.24</div>
+                <div class="title">Next Order:</div>
+                <div class="title">Waste and</div>
+                <div class="title">Defective Cost</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 shadow row-div">
+                <table class="table table-striped table-hover">
+                    <div class="container"></div>
+                    <div class="row table-options">
+                        <div class="col-xs-2 search-box">
+                            <div class="left-inner-addon">
+                                <i class="glyphicon glyphicon-search"></i>
+                                <input type="text" class="form-control" placeholder="Search"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-2 import-export">
+                            <button type="button" class="btn btn-default btn-md center">Import</button>
+                        </div>
+                        <div class="col-xs-2 import-export">
+                            <button type="button" class="btn btn-default btn-md center">Export</button>
+                        </div>
+                    </div>
+                    <tr>
+                        <th>   </th>
+                        <th>Product</th>
+                        <th>Ordered</th>
+                        <th>Defective</th>
+                        <th>Needed</th>
+                        <th>In Stock</th>
+                        <th>Price Per Unit</th>
+                    </tr>
+                    <!-- Generated through JQuery and AJAX -->
+                    <tr>
+                        <td><img src="http://www.puritanbakery.com/_img/products/bun-4in-wheat.png"></td>
+                        <td>Hamburger Buns</td>
+                        <td>1500</td>
+                        <td>153</td>
+                        <td>350</td>
+                        <td>400</td>
+                        <td>$0.31</td>
+                    </tr>
+                    <tr>
+                     <td><img src="http://lghttp.5588.nexcesscdn.net/803DC0/magento/media/catalog/product/cache/7/image/9df78eab33525d08d6e5fb8d27136e95/w/h/white-onions.png"></td>
+                     <td>Onions</td>
+                     <td>215</td>
+                     <td>70</td>
+                     <td>25</td>
+                     <td>80</td>
+                     <td>$0.15</td>
+                 </tr>
+                 <tr>
+                    <td><img src="http://www.examiner.com/images/blog/wysiwyg/image/tomato(1).png"></td>
+                    <td>Tomatoes</td>
+                    <td>215</td>
+                    <td>92</td>
+                    <td>35</td>
+                    <td>105</td>
+                    <td>$0.73</td>
+                </tr>
+                <tr>
+                    <td><img src="http://static.tumblr.com/33fc65a2406da0c4b9e0a1a61655fa98/be3t1wg/C8Qn1uirh/tumblr_static_butter_lettuce.png"></td>
+                    <td>Lettuce</td>
+                    <td>150</td>
+                    <td>15</td>
+                    <td>20</td>
+                    <td>60</td>
+                    <td>$0.99</td>
+                </tr>
+                <tr>
+                    <td><img src="http://www.shady-maple.com/files/shady-maple/3513/1862/5005/Ground-Beef-Hamburger-Patties.png"></td>
+                    <td>1/4 lb. Ground Beef</td>
+                    <td>1450</td>
+                    <td>120</td>
+                    <td>40</td>
+                    <td>350</td>
+                    <td>$0.89</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+</body>
+</html>
