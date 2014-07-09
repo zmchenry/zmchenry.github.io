@@ -23,7 +23,6 @@ tr {
 
 }
 
-
 .table {
     background: rgba(0, 0, 0, 0);\
     padding: 0px;
@@ -55,7 +54,8 @@ tr {
     background: inherit;
 }
 
-.center {
+.center, 
+.center>li {
     display: table-cell;
     vertical-align: middle;
     float: none;
@@ -230,6 +230,27 @@ tr {
 
 .chart-legend {
     font-size: 1.2em;
+}
+
+.business-name>span {
+    color: white;
+}
+
+.business-name>span {
+    color: white;
+}
+
+.business-name {
+    color: #777;
+    padding-right: 12px;
+}
+
+.divider-bars>li { 
+    border-left: solid 2px #444;
+}
+
+.divider-bars> li:first-child {
+    border-left: none;
 }
 
 @media (max-width: 991px) {
