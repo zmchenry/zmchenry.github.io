@@ -270,4 +270,16 @@ tr {
         margin-right: auto;
     }
 
+    .business-name {
+        display: none;
+        visibility: hidden;
+    }
+    
+    .divider-bars> li:nth-child(2){
+        border-left: none;
+    }
+
+    .nav {
+        float: right;
+    }
 }
