@@ -1,6 +1,6 @@
 $(document).ready(function() {});
 
-$.getScript('http://www.chartjs.org/assets/Chart.js',function(){
+$.getScript('https://www.chartjs.org/assets/Chart.js',function(){
 
   var usedWastedData = [{
         value: 2224,
