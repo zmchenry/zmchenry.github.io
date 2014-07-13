@@ -1,6 +1,6 @@
 $(document).ready(function() {});
 
-$.getScript('js/Chart.min.js',function(){
+$.getScript('https://zmchenry.github.io/projects/InToEat/js/Chart.min.js',function(){
 
   var usedWastedData = [{
         value: 2224,
