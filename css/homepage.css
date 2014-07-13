@@ -104,6 +104,7 @@ h1, h3, .social-media {
 h1 {
 	font-size: 70px;
 	font-weight: bold;
+	margin-bottom: 5px;
 	color: #b3b3b3;
 	color: rgba(255, 255, 255, 0.3);
 }
