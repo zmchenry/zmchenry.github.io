@@ -1,0 +1,97 @@
+.flex-container {
+
+	max-width: 1000px;
+	padding: 20px;
+	margin: 0 auto;
+	list-style: none;
+	overflow: hidden;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-flex-flow: row wrap;
+	justify-content: center;
+}
+
+.flex-item {
+	background: #fff;
+	padding: 5px;
+	width: 290px;
+	height: 300px;  
+	line-height: 300px;
+	font-weight: bold;
+	font-size: .85em;
+	text-align: center;
+	margin: 15px 10px;
+	box-shadow: 0 1px 3px rgba(black, 0.2);
+	color: rgba(70,130,180, 0);
+	border-radius: 3px;
+}
+
+body {
+	background: url(http://s.cdpn.io/3/blurry-blue.jpg);
+	background-size: cover;
+	padding: 30px;
+}
+
+.come-in {
+	transform: translateY(150px);
+	animation: come-in 1s ease forwards;
+}
+.come-in:nth-child(3n) {
+	animation-duration: 1.5s;
+}
+.already-visible {
+	transform: translateY(0);
+	animation: none;
+}
+
+@keyframes come-in {
+	to { transform: translateY(0); }
+}
+
+#overlay {
+	background:rgba(0,0,0,0.7);
+	width:100%;
+	height:150%;
+	position:absolute;
+	top:0;
+	left:0;
+	display:none;
+	text-align:center;
+}
+
+#overlay iframe {
+	margin-top: 2%;
+	width: 85%;
+	height: 65%;
+}
+
+a {
+	text-decoration:none;
+	color: rgba(70,130,180,0);
+}
+
+.personal, .professional {
+	-webkit-transition: background 0.4s ease-in-out;
+}
+
+.personal:hover {
+	background: rgba(133,222,242,.7);
+	color: rgba(255,255,255, 1);
+}
+
+.professional:hover {
+	background: rgba(118,204,188,.7);
+	color: rgba(255,255,255, 1);
+}
+
+.page a{
+	margin: 0px; 
+	display: block; 
+	width: 100%; 
+	height: 100%;
+}
