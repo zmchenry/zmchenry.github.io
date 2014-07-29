@@ -39,8 +39,10 @@ p {
 
 .destroy {
     float: right;
-    width: 5%;
-    background-image: url("/img/deny.png")
+    width: 10%;
+    border: 0;
+    margin-top: 5px;
+    min-width: 50px;
 }
 
 hr {
