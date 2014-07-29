@@ -1,1 +1,0 @@
-angular.module("todo").factory("todoStorage",function(){"use strict";var t="todos-angularjs";return{get:function(){return JSON.parse(localStorage.getItem(t)||"[]")},put:function(o){localStorage.setItem(t,JSON.stringify(o))}}});

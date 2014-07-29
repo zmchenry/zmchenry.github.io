@@ -7,7 +7,12 @@
     // Create todos
     $scope.todo = {};
     $scope.addTodo = function(form) {
-        $scope.todos.push($scope.todo);
+        if($scope.todo.title) {
+            $scope.todo.title = $scope.todo.title.trim();
+            $scope.todos.push($scope.todo);
+        } else {
+            return;
+        }
         $scope.todo = {};
         form.$setPristine();
     };
@@ -18,14 +23,15 @@
         this.todos.splice(index, 1);
     };
 
-    // Get completed items
-    $scope.completed = 0;
+    // Get in progress items
+    $scope.inprogress = 0;
     $scope.$watch("todos", function(todos) {
         var selectedItems = 0;
         angular.forEach(todos, function(todo) {
-            selectedItems += todo.completed ? 1 : 0;
+            selectedItems += todo.completed ? 0 : 1;
         });
-        $scope.completed = selectedItems;
+        $scope.inprogress
+ = selectedItems;
     }, true);
 
 });

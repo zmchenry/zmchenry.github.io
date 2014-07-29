@@ -1,6 +1,9 @@
 <div class="row">
-    <div class="view col-md-6 col-md-offset-3" ng-repeat="todo in todos" ng-show="!todo.compeleted">
-        <input class="checkbox toggle col-md-4" type="checkbox" ng-model="todo.completed">
+    <div class="todo-in-list col-md-6 col-md-offset-3" ng-repeat="todo in todos" ng-show="!todo.compeleted">
+    <div class="checkbox-decorated col-md-4">
+            <input class="checkbox toggle" type="checkbox" ng-model="todo.completed" id="check">
+            <label for="check"></label>
+        </div>
         <label class="todo-title col-md-4" ng-class="{slashed: todo.completed}">{{todo.title}}</label>
         <button class="destroy col-md-4" ng-click="removeTodo(todo)"></button>
     </div>
