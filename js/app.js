@@ -72,3 +72,5 @@ $(".flex-container .post").click(function() {
 $overlay.click(function() {
   $overlay.hide();
 });
+
+$(".come-in").animate()

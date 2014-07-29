@@ -1,0 +1,42 @@
+
+.main-title {
+    text-align: center;
+    font-size: 5em;
+    font-weight: bold;
+    color: #b3b3b3;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.5);
+}
+
+.todo-title {
+    padding-left: 0px;
+    margin-left: 0px;
+    font-size: 1.2em;
+}
+
+.newTodo {
+    margin-right: 25%; 
+}
+
+#info {
+    margin-top: 15px;
+}
+
+p {
+    text-align: center;
+    margin: 0px auto;
+}
+
+.destroy {
+    float: right;
+    width: 5%;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px dashed #333;
+}
+
+.slashed {
+    text-decoration: line-through;
+}
