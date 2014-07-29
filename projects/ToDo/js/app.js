@@ -30,8 +30,7 @@
         angular.forEach(todos, function(todo) {
             selectedItems += todo.completed ? 0 : 1;
         });
-        $scope.inprogress
- = selectedItems;
+        $scope.inprogres = selectedItems;
     }, true);
 
 });
