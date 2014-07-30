@@ -1,10 +1,13 @@
 <div class="row">
-    <div class="todo-in-list col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3" ng-repeat="todo in todos" ng-show="!todo.compeleted">
-        <div class="checkbox-decorated col-xs-4 col-sm-4 col-md-4">
-            <input class="checkbox toggle" type="checkbox" ng-model="todo.completed" id="check">
-            <label for="check"></label>
-        </div>
-        <label class="todo-title col-xs-4 col-sm-4 col-md-4" ng-class="{slashed: todo.completed}">{{todo.title}}</label>
-        <input type="image" src="https://raw.githubusercontent.com/zmchenry/zmchenry.github.io/master/projects/ToDo/img/deny.png" class="destroy col-xs-4 col-sm-4 col-md-4" ng-click="removeTodo(todo)"></input>
-    </div>
+    <ul class="todo-in-list col-xs-12 col-sm-12 col-md-12">
+
+        <li ng-repeat="todo in todos" ng-show="!todo.compeleted" class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <div class="checkbox-decorated col-xs-4 col-sm-4 col-md-4">
+                <input class="checkbox toggle" type="checkbox" ng-model="todo.completed" id="check">
+                <label for="check"></label>
+            </div>
+            <label class="todo-title col-xs-4 col-sm-4 col-md-5" ng-class="{slashed: todo.completed}">{{todo.title}}</label>
+            <input type="image" src="https://raw.githubusercontent.com/zmchenry/zmchenry.github.io/master/projects/ToDo/img/deny.png" class="destroy col-xs-4 col-sm-4 col-md-4" ng-click="removeTodo(todo)"></input>
+        </li>
+    </ul>
 </div>

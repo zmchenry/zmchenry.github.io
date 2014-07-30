@@ -1,9 +1,21 @@
 (function() {
  var app = angular.module('todo', []);
 
- app.controller("TodoController", function TodoController($scope) {
-    $scope.todos = todos;
+ app.factory("todoList", function() {
+    var todos = [{
+        title: "Learn Angular",
+        completed: false
+    }, 
+    {
+        title: "Learn Bootstrap",
+        completed: true
+    }]; 
+    return todos;
+ });
 
+ app.controller("TodoController", function TodoController($scope, todoList) {
+    $scope.todos = todoList;
+    $scope.filt = "all";
     // Create todos
     $scope.todo = {};
     $scope.addTodo = function(form) {
@@ -23,6 +35,22 @@
         this.todos.splice(index, 1);
     };
 
+    $scope.changeFilter = function(item) {
+        switch(item) {
+            case "all":
+                $scope.filt = "all";
+                break;
+            case "active":
+                $scope.filt= "active";
+                break;
+            case "completed":
+                $scope.filt= "completed";
+                break;
+            default: 
+                console.log(item);
+        }
+    };
+
     // Get in progress items
     $scope.inprogress = 0;
     $scope.$watch("todos", function(todos) {
@@ -30,7 +58,7 @@
         angular.forEach(todos, function(todo) {
             selectedItems += todo.completed ? 0 : 1;
         });
-        $scope.inprogres = selectedItems;
+        $scope.inprogress = selectedItems;
     }, true);
 
 });
@@ -56,14 +84,5 @@
     };
 });
 
- var todos = [{
-  title: "Learn Angular",
-  completed: false
-}, 
-{
-  title: "Learn Bootstrap",
-  completed: true
-}
-];
 })();
 

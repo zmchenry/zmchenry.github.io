@@ -1,6 +1,19 @@
-
+body {
+    margin: 10px 5px;
+}
 *:focus {
     outline: 0;
+}
+
+.angular-badge {
+    width: 15%;
+    min-width: 50px;
+    margin-bottom: 10px;
+    margin-left: 7%;
+}
+
+li {
+    list-style: none;
 }
 
 input{
@@ -10,8 +23,7 @@ input{
 }
 
 .main-title {
-    text-align: center;
-    font-size: 5em;
+    font-size: 4em;
     font-weight: bold;
     color: #b3b3b3;
     color: rgba(255, 255, 255, 0.8);
@@ -28,13 +40,16 @@ input{
     margin-right: 25%; 
 }
 
-#info {
+.info {
     margin-top: 15px;
 }
 
-p {
+.info .paragraph {
     text-align: center;
-    margin: 0px auto;
+}
+
+p {
+    margin-left: -15%;
 }
 
 .destroy {
