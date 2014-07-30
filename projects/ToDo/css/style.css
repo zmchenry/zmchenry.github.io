@@ -1,5 +1,6 @@
 body {
     margin: 10px 5px;
+    background: url("../img/ricepaper.png") repeat;
 }
 *:focus {
     outline: 0;
