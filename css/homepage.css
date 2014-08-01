@@ -12,7 +12,9 @@
   display: -webkit-flex;
   display: flex;
   
+  flex-flow: row wrap;
   -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
   justify-content: center;
 }
 
@@ -47,6 +49,7 @@ body {
 .come-in {
 	transform: translateY(150px);
   -webkit-animation: come-in 0.6s ease forwards;
+  -moz-animation: come-in 0.6s ease forwards;
 }
 .come-in:nth-child(3n) {
   animation-duration: 1.5s;
@@ -97,7 +100,7 @@ a {
 	color: rgba(255,255,255, 1);
 }
 
-.page a{
+.page a, .post a {
 	margin: 0px; 
 	display: block; 
 	width: 100%; 
