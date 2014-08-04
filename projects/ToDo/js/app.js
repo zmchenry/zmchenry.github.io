@@ -30,9 +30,8 @@
     };
 
     // Remove todos
-    $scope.removeTodo = function(item) {
-        var index = this.todos.indexOf(item);
-        this.todos.splice(index, 1);
+    $scope.removeTodo = function(index) { 
+        $scope.todos.splice(index, 1);
     };
 
     $scope.changeFilter = function(item) {

@@ -7,7 +7,7 @@
                 <label for="check"></label>
             </div>
             <label class="todo-title col-xs-4 col-sm-4 col-md-5" ng-class="{slashed: todo.completed}">{{todo.title}}</label>
-            <input type="image" src="https://raw.githubusercontent.com/zmchenry/zmchenry.github.io/master/projects/ToDo/img/deny.png" class="destroy col-xs-4 col-sm-4 col-md-4" ng-click="removeTodo(todo)"></input>
+            <input type="image" src="https://raw.githubusercontent.com/zmchenry/zmchenry.github.io/master/projects/ToDo/img/deny.png" class="destroy col-xs-4 col-sm-4 col-md-4" ng-click="removeTodo($index)"></input>
         </li>
     </ul>
 </div>
