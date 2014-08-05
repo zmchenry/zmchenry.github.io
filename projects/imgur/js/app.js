@@ -33,13 +33,15 @@ app.controller('GalleryCtrl', function($scope, imageService) {
     $scope.searching = false;
     $scope.signInDropdown = false;
     $scope.infoShow = false;
-    $scope.imageLimit = 60;
+    $scope.imageLimit = 0;
     $scope.pageNum = 0;
     $scope.getGallery = function() {
         imageService.getGallery($scope.pageNum).then(function(images){
                                             applyRemoteData(images);
                                         },
                                         function() {
+                                            $scope.imageLimit = $scope.images.length;
+                                            $scope.pageNum = 10;
                                             console.log("Failure getting gallery");}
                                         );
     };
@@ -48,19 +50,17 @@ app.controller('GalleryCtrl', function($scope, imageService) {
         if($scope.imageLimit + 60 >= $scope.images.data.length) {
             $scope.pageNum++;
             $scope.getGallery();
-        } else {
-            $scope.imageLimit += 60;
         }
+        $scope.imageLimit += 60;
     };
 
     function checkForAlbums() {
         angular.forEach($scope.images.data, function(image) {
-            if(typeof image.gallery_link === 'undefined' && !image.gallery_link) {
+            if(image && typeof image.gallery_link === 'undefined' && !image.gallery_link) {
                 if(image.is_album) {
-                    image.gallery_link = "https://i.imgur.com/" + image.cover + "b.jpg";
+                    image.gallery_link = "http://i.imgur.com/" + image.cover + "b.jpg";
                 } else {
                     image.gallery_link = image.link.replace(image.id, image.id + "b");
-                    image.gallery_link = image.link.replace("http", "https");
                 }
             }
         });
@@ -132,12 +132,12 @@ app.directive("cards", function() {
     };
 });
 
-app.directive("whenScrolled", function() {
+app.directive("scrollLoad", function() {
     return function(scope, elm, attr) {
         var raw = elm[0];
         elm.bind("scroll", function() {
             if(raw.scrollTop + raw.offsetHeight >= raw.scrollHeight - 100) {
-                scope.$apply(attr.whenScrolled);
+                scope.$apply(attr.scrollLoad);
             }
         });
     };
