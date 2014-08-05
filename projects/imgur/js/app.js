@@ -55,12 +55,12 @@ app.controller('GalleryCtrl', function($scope, imageService) {
 
     function checkForAlbums() {
         angular.forEach($scope.images.data, function(image) {
-            console.log(image.gallery_link);
             if(typeof image.gallery_link === 'undefined' && !image.gallery_link) {
                 if(image.is_album) {
                     image.gallery_link = "https://i.imgur.com/" + image.cover + "b.jpg";
                 } else {
                     image.gallery_link = image.link.replace(image.id, image.id + "b");
+                    image.gallery_link = image.link.replace("http", "https");
                 }
             }
         });
