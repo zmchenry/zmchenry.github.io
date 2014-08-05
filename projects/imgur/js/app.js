@@ -58,7 +58,7 @@ app.controller('GalleryCtrl', function($scope, imageService) {
             console.log(image.gallery_link);
             if(typeof image.gallery_link === 'undefined' && !image.gallery_link) {
                 if(image.is_album) {
-                    image.gallery_link = "http://i.imgur.com/" + image.cover + "b.jpg";
+                    image.gallery_link = "https://i.imgur.com/" + image.cover + "b.jpg";
                 } else {
                     image.gallery_link = image.link.replace(image.id, image.id + "b");
                 }
