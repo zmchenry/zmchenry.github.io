@@ -171,3 +171,19 @@ h3 {
 .imgur-tile {
     background-image: url("../img/imgurfrontpage.png");
 }
+
+.propositional_checker_tile {
+    background-image: url("../img/propositional_tile.png");
+}
+
+.tju_tile {
+    background-image: url("../img/tju_tile.png");
+}
+
+.recaman_tile {
+    background-image: url("../img/recaman_tile.png");
+}
+
+.snake_tile {
+    background-image: url("../img/snake_tile.png");
+}
