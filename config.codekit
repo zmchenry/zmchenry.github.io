@@ -1518,13 +1518,13 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "McHenry, Zachary",
+"lastSavedByUser": "Zachary McHenry",
 "manualImportLinks": {
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
 	"displayValue": "zmchenry.github.io",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "pencil_yellow"
 	},
 "projectSettings": {
